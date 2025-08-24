@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ilocano Number System</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url("ilocano-region.jpg") center/cover no-repeat fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1.5s ease;
+    }
+    .hero button {
+      background: linear-gradient(135deg, #ff6f61, #b22222);
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+    }
+    .hero button:hover {
+      background: linear-gradient(135deg, #b22222, #ff6f61);
+    }
+
+    /* Navigation */
+    nav {
+      background: #222;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #ff6f61; }
+
+    /* Sections */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #b22222;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+    table th {
+      background: #b22222;
+      color: #fff;
+    }
+    table tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    table tr:hover {
+      background: #f1f1f1;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes pulse {
+      0% { transform: scale(1);}
+      50% { transform: scale(1.05);}
+      100% { transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Ilocano Number System</h1>
+      <p>Preserving Culture Through Numbers</p>
+      <button onclick="document.getElementById('background').scrollIntoView({behavior:'smooth'});">Explore Now</button>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#background">Background</a>
+    <a href="#numbers">Numbers</a>
+    <a href="#measurement">Measurement</a>
+    <a href="#applications">Applications</a>
+    <a href="#comparison">Comparison</a>
+    <a href="#preservation">Preservation</a>
+  </nav>
+
+  <!-- Background -->
+  <section id="background">
+    <h2>Background</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="ilocano-region.jpg" alt="Ilocos Region">
+        <p>The Ilocano people are among the largest ethnolinguistic groups in the Philippines, mostly inhabiting the Ilocos Region (Ilocos Norte, Ilocos Sur, La Union, Pangasinan). They are known for their hardworking, thrifty, and resourceful nature.</p>
+      </div>
+      <div class="card">
+        <img src="ilocano-people.jpg" alt="Ilocano People">
+        <p>Ilocanos are culturally rich and value <em>masinop</em> (thriftiness and resourcefulness). Their language has two number systems: a <strong>native Ilocano system</strong> and a <strong>Spanish-derived system</strong>, showing the deep influence of colonization and cultural adaptation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Number System -->
+  <section id="numbers">
+    <h2>Number System</h2>
+    <div class="card">
+      <p>The Ilocano number system combines both <strong>native words</strong> and <strong>Spanish terms</strong>. The native system is often used in traditional and cultural contexts, while the Spanish-derived system is widely used in daily transactions and modern counting.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Ilocano Native</th>
+            <th>Ilocano Spanish</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1: Maysa</td><td>Uno</td></tr>
+          <tr><td>2: Dua</td><td>Dos</td></tr>
+          <tr><td>3: Tallo</td><td>Tres</td></tr>
+          <tr><td>4: Uppat</td><td>Kuatro</td></tr>
+          <tr><td>5: Lima</td><td>Singko</td></tr>
+          <tr><td>6: Innem</td><td>Sais</td></tr>
+          <tr><td>7: Pito</td><td>Siete</td></tr>
+          <tr><td>8: Walo</td><td>Otso</td></tr>
+          <tr><td>9: Siam</td><td>Nuebe</td></tr>
+          <tr><td>10: Sangapulo/Pullo</td><td>Dies</td></tr>
+          <tr><td>11: Sangapulo ket Maysa</td><td>Once</td></tr>
+          <tr><td>20: Duapulo</td><td>Bente</td></tr>
+          <tr><td>100: Sangagasut</td><td>Syento</td></tr>
+          <tr><td>1000: Sangaribu</td><td>Mil</td></tr>
+          <tr><td>1,000,000: Sangariwriw</td><td>Milyon</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Measurement -->
+  <section id="measurement">
+    <h2>Measurement Practices</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="measurement-tools.jpg" alt="Land Tools">
+        <h3>Land</h3>
+        <p><strong>Rukod</strong> – counting paces to measure distances of land.</p>
+        <p><strong>Bagting</strong> – ropes or cords used to measure fields, often for farming or boundaries.</p>
+      </div>
+
+      <div class="card">
+        <h3>Harvest</h3>
+        <img src="chupa-ganta.jpg" alt="Chupa and Ganta">
+        <p><strong>Chupa</strong> – 375 ml, often used for rice and grains.</p>
+        <p><strong>Ganta</strong> – 3 liters / 8 chupa, larger volume for grains or liquids.</p>
+        <img src="kaban.jpg" alt="Kaban" style="margin-top:1rem;">
+        <p><strong>Kaban</strong> – 50–60 kg / 25 ganta, the standard sack for rice harvest.</p>
+      </div>
+
+      <div class="card">
+        <h3>Household</h3>
+        <img src="body-measurements.jpg" alt="Body-based Measurements">
+        <p><strong>Dipa</strong> – about 68 inches (length of outstretched arms).</p>
+        <p><strong>Dangkal</strong> – 8–9 inches (span of a hand).</p>
+        <p><strong>Talampakan</strong> – 12 inches (one foot).</p>
+        <img src="dakot.jpg" alt="Dakot" style="margin-top:1rem;">
+        <p><strong>Dakot</strong> – about 10 grams (a handful).</p>
+        <img src="salok.jpg" alt="Salok" style="margin-top:1rem;">
+        <p><strong>Salok</strong> – 80 ml (a ladleful).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Applications -->
+  <section id="applications">
+    <h2>Practical Applications</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="agriculture.jpg" alt="Agriculture">
+        <h3>Agriculture</h3>
+        <p><em>Kasapulan mi ti duapulo a sako ti pagay para iti panagmula.</em></p>
+        <p><strong>Translation:</strong> We need twenty sacks of rice for planting.</p>
+      </div>
+      <div class="card">
+        <img src="market-scene.jpg" alt="Market">
+        <h3>Commerce</h3>
+        <p><em>Pabili man ti innem a kilo ti bangus.</em></p>
+        <p><strong>Translation:</strong> Please give me six kilos of milkfish.</p>
+      </div>
+      <div class="card">
+        <img src="household.jpg" alt="Household Tasks">
+        <h3>Household</h3>
+        <p>Measurements like <strong>dangkal</strong> and <strong>talampakan</strong> are used in tailoring, carpentry, and cooking in rural homes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section id="comparison">
+    <h2>Comparison & Relevance</h2>
+    <div class="card">
+      <p>The Ilocano number system differs from modern base-10 numerals. It integrates <strong>native Ilocano words</strong>, <strong>Spanish-derived numbers</strong>, and <strong>Arabic symbols</strong>.</p>
+      <p><strong>Relevance:</strong> These systems highlight cultural identity, resourcefulness, and adaptation to colonial influences. They are still used today in agriculture, commerce, and households.</p>
+    </div>
+  </section>
+
+  <!-- Preservation -->
+  <section id="preservation">
+    <h2>Preservation</h2>
+    <div class="card">
+      <img src="festival.jpg" alt="Festival">
+      <p>Preservation of the Ilocano number system is vital to cultural heritage. Ways to preserve include:</p>
+      <ul>
+        <li>Using Ilocano numbers in schools and local education.</li>
+        <li>Promoting their use in festivals, cultural plays, and rituals.</li>
+        <li>Documenting traditional measurement practices digitally.</li>
+        <li>Encouraging youth to practice Ilocano counting in everyday life.</li>
+      </ul>
+      <button onclick="alert('Thank you for exploring the Ilocano Number System!')">Say Thank You</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>References: Ilocano Learner Blog | Wikibooks | Omniglot</p>
+    <p>&copy; 2025 Ilocano Number System Project</p>
+  </footer>
+</body>
+</html>
